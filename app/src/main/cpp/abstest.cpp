@@ -3,6 +3,16 @@
 
 #include <jni.h>
 
+
+extern "C" JNIEXPORT double JNICALL
+Java_com_example_abstest_MainActivity_globalAbsTestDouble(
+        JNIEnv *env,
+        jobject /* this */,
+        jdouble val)
+{
+    return abs(val);
+}
+
 extern "C" JNIEXPORT double JNICALL
 Java_com_example_abstest_MainActivity_absTestDouble(
         JNIEnv *env,

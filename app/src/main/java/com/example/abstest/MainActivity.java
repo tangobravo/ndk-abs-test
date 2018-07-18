@@ -16,7 +16,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         StringBuilder sb = new StringBuilder();
-        sb.append("absTestDouble(-1.23) = ");
+        sb.append("globalAbsTestDouble(-9.87) = ");
+        sb.append(globalAbsTestDouble(-9.87));
+        sb.append("\nabsTestDouble(-1.23) = ");
         sb.append(absTestDouble(-1.23));
         sb.append("\nabsTestFloat(-4.56f) = ");
         sb.append(absTestFloat(-4.56f));
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(sb.toString());
     }
 
+    public native double globalAbsTestDouble(double val);
     public native double absTestDouble(double val);
     public native float absTestFloat(float val);
     public native int absTestInt(int val);
